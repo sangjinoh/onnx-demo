@@ -8,7 +8,7 @@
       <!-- 데모 항목 목록 -->
       <ul class="menu-list">
         <!-- 데모 항목 루프 -->
-        <li v-for="info in demoInfo" :key="info.path" :class="{ active: currentView === 'resnet50' }">
+        <li v-for="info in demoInfo" :key="info.path" :class="{ active: currentView === 'yolo' }">
           <!-- 라우터 링크로 연결된 데모 항목 -->
           <router-link :to="`/${info.path}`">
             <span class="menu-item-heading">{{ info.model }}</span>
