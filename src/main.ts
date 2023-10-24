@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import App from './App.vue'
-import Router from 'vue-router'
-import Home from './components/Home.vue'
-import Vuetify from 'vuetify'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import Vuetify from 'vuetify';
+import '@babel/polyfill';
+import 'whatwg-fetch';
+import 'vuetify/dist/vuetify.min.css';
 
-Vue.config.productionTip = false
-
-Vue.use(Router);
+Vue.config.productionTip = false;
 Vue.use(Vuetify, {
   theme: {
     primary: '#2a6a96',
@@ -16,19 +16,7 @@ Vue.use(Vuetify, {
   }
 });
 
-const router = new Router({
-  mode: 'hash',
-  base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '*',
-      name: 'home',
-      component: Home,
-    },
-  ],
-});
-
 new Vue({
   router,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount('#app');
