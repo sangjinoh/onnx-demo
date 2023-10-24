@@ -1,16 +1,25 @@
 <template>
+    <!-- 사이드 바 메뉴 템플릿 -->
     <aside class="menu">
+      <!-- 로고 -->
       <div class="logo"><a href=".">ONNX.JS</a></div>
+      <!-- 데모 항목 라벨 -->
       <p class="menu-label">Demos</p>
+      <!-- 데모 항목 목록 -->
       <ul class="menu-list">
-        <li v-for="info in demoInfo" :key="info.path" :class="{ active: currentView === 'yolo' }">
+        <!-- 데모 항목 루프 -->
+        <li v-for="info in demoInfo" :key="info.path" :class="{ active: currentView === 'resnet50' }">
+          <!-- 라우터 링크로 연결된 데모 항목 -->
           <router-link :to="`/${info.path}`">
             <span class="menu-item-heading">{{ info.model }}</span>
           </router-link>
         </li>
       </ul>
+      <!-- 링크 라벨 -->
       <p class="menu-label">Links</p>
+      <!-- 링크 목록 -->
       <ul class="menu-list github">
+        <!-- 링크 항목들 -->
         <li>
           <a href="https://github.com/Microsoft/onnxjs" target="_blank" rel="noopener noreferrer">
             <span class="menu-item-heading"> ONNX.js GitHub</span>
@@ -37,7 +46,7 @@
   ];
   
   @Component
-  export default class MainMenu extends Vue{
+  export default class MainMenu extends Vue {
     @Prop({default: 'home' }) currentView: string;
     demoInfo: Array<{model: string, title: string, path: string}> = DEMO_INFO;
     constructor() {
@@ -50,12 +59,14 @@
   <style lang="postcss">
   @import '../variables.css';
   
+  /* 메뉴 스타일 */
   .menu {
     font-family: var(--font-sans-serif);
     padding: 20px 40px;
     background: whitesmoke;
   }
   
+  /* 로고 스타일 */
   .logo {
     font-size: 20px;
     
@@ -65,6 +76,7 @@
     }
   }
   
+  /* 라벨 스타일 */
   .menu-label {
     user-select: none;
     cursor: default;
@@ -75,6 +87,7 @@
     margin: 11px 0;
   }
   
+  /* 메뉴 리스트 스타일 */
   .menu-list {
     list-style: none;
   
@@ -116,6 +129,7 @@
     }
   }
   
+  /* 깃허브 및 연락처 링크 스타일 */
   .menu-list.github,
   .menu-list.contact {
     & li {
@@ -147,3 +161,4 @@
     }
   }
   </style>
+  
