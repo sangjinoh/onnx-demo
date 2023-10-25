@@ -37,7 +37,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 // 데모 정보 데이터
-const DEMO_INFO = [
+const DEMO_INFO = [  
+  { title: 'ResNet50, trained on ImageNet', path: 'resnet50', imagePath: require('@/assets/resnet50.png') },
   { title: 'Yolo', path: 'yolo', imagePath: require('@/assets/yolo.png') }
 ];
 
