@@ -7,8 +7,12 @@
       <p class="menu-label">Demos</p>
       <!-- 데모 항목 목록 -->
       <ul class="menu-list">
+        <!-- 라우터 링크로 연결된 데모 항목
+        <router-link :to="'/yolo'">
+          <span class="menu-item-heading">Yolo</span>
+        </router-link> -->
         <!-- 데모 항목 루프 -->
-        <li v-for="info in demoInfo" :key="info.path" :class="{ active: currentView === 'yolo' }">
+        <li v-for="info in demoInfo" :key="info.path" :class="{ active: currentView === 'resnet50' }">
           <!-- 라우터 링크로 연결된 데모 항목 -->
           <router-link :to="`/${info.path}`">
             <span class="menu-item-heading">{{ info.model }}</span>
@@ -40,14 +44,15 @@
   </template>
   
   <script scoped lang='ts'>
-  import {Vue, Component, Prop} from 'vue-property-decorator';
+  import {Vue, Component, Prop} from 'vue-property-decorator'; // Vue Property Decorator를 사용하여 Vue 컴포넌트를 정의하기 위한 필요한 모듈
   const DEMO_INFO = [
+    { model: 'ResNet50', title: 'ResNet, trained on ImageNet', path: 'resnet50'},  
     { model: 'Yolo', title: 'Yolo', path: 'yolo'},
   ];
   
   @Component
   export default class MainMenu extends Vue {
-    @Prop({default: 'home' }) currentView: string;
+    @Prop({default: 'home' }) currentView!: string;
     demoInfo: Array<{model: string, title: string, path: string}> = DEMO_INFO;
     constructor() {
       super();

@@ -16,7 +16,7 @@ Vue.use(Vuetify, {
   }
 });
 
-new Vue({
+new Vue({ // Vue 인스턴스 생성
   router,
-  render: (h) => h(App),
-}).$mount('#app');
+  render: (h) => h(App), // 최상위 컴포넌트를 렌더링하는 함수
+}).$mount('#app'); // #app 요소에 Vue 애플리케이션을 마운트
