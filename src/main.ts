@@ -1,12 +1,9 @@
-import Vue from 'vue';
-import App from './App.vue';
+import Vue from 'vue'
+import App from './App.vue'
 import router from './router';
-import Vuetify from 'vuetify';
-import '@babel/polyfill';
-import 'whatwg-fetch';
-import 'vuetify/dist/vuetify.min.css';
+import Vuetify from 'vuetify'
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 Vue.use(Vuetify, {
   theme: {
     primary: '#2a6a96',
@@ -16,7 +13,7 @@ Vue.use(Vuetify, {
   }
 });
 
-new Vue({ // Vue 인스턴스 생성
-  router,
-  render: (h) => h(App), // 최상위 컴포넌트를 렌더링하는 함수
-}).$mount('#app'); // #app 요소에 Vue 애플리케이션을 마운트
+// new Vue({
+//   router,
+//   render: (h) => h(App),
+// }).$mount('#app');
